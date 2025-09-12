@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from Sentimiento_analisys import analisis_sentimiento
 from Tokenizador import tokenizar_texto
-
+from NER import ner_shows
 huggface = FastAPI(title="huggingface_modul")
 
 # habilitar CORS (ajusta en producción)
@@ -19,6 +19,7 @@ huggface.add_middleware(
 FUNCTIONS = {
     "sentiment": analisis_sentimiento,
     "tokenizar": tokenizar_texto,
+    "NER": ner_shows
 }
 
 @huggface.get("/")
