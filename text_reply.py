@@ -24,7 +24,6 @@ PIPELINE = pipeline(task=TAREA, model=MODELO, token=TOKEN_HUGFACE)
 # iniciamos la variable prompt con el mensaje del sistema
 PROMPT = '<|im_start|>system \n You are a friendly chatbot.<|im_end|>\n'
 
-
 def update_context(contexto: str, user: bool = True) -> None:
     
     """
@@ -138,4 +137,4 @@ def chatbot_stream(pregunta: str) -> str:
 
 #print(chatbot('Hola, como estas?'))
 
-#print(chatbot_stream('Hola, en que me puedes ayudar?'))
+print(chatbot_stream('Hola, en que me puedes ayudar?'))
