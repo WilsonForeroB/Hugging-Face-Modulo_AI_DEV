@@ -1,0 +1,2 @@
+Para desplegar en desarrollo (dev) usando docker:
+docker compose -f docker-compose.dev.yml up --build -d

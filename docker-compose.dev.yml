@@ -1,0 +1,18 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ${BACK_NAME}
+    restart: unless-stopped
+    ports:
+      - "${BACK_PORT_LOCAL}:${BACK_PORT_CONTAINER}"
+    env_file:
+      - ./backend/.env
+    networks:
+      - main-network
+
+networks:
+  main-network:
+    name: ${NETWORK_NAME}
+    driver: bridge

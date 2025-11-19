@@ -1,5 +1,5 @@
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
-from variables import MODELO_BASE
+from backend.variables import MODELO_BASE
 
 tokenizador = AutoTokenizer.from_pretrained(MODELO_BASE)
 
