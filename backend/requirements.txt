@@ -5,4 +5,4 @@ ipymarkup
 pydantic
 fastapi            # si usas FastAPI
 uvicorn[standard]  # el servidor ASGI
-gunicorn           
+gunicorn          

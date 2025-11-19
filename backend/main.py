@@ -36,5 +36,5 @@ if __name__ == "__main__":
     uvicorn.run(
         "main:hf",  
         host="0.0.0.0",
-        port=6000
+        port=7000
     )
