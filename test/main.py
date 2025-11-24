@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from backend.services.Sentimiento_analisys import analisis_sentimiento
-from Tokenizador import tokenizar_texto
+from backend.services.Tokenizador import tokenizar_texto
 from NER import ner_shows
 huggface = FastAPI(title="huggingface_modul")
 

@@ -4,6 +4,12 @@ import traceback
 import logging
 from helpers import _to_python
 
+import cv2
+
+p = r"C:/www/Thepower/AI DEVELOPER/Multimodal Models/Modelos-Multimodales-Modulo_AI_Dev/bulldog.png"
+img = cv2.imread(p)
+print(img)
+
 # Configuración de logs
 logging.basicConfig(
     level=logging.INFO,
@@ -59,3 +65,6 @@ def ner_shows(texto: str):
             "error": str(e),
             "trace": traceback.format_exc()
         }
+    
+
+
