@@ -3,6 +3,7 @@ from fastapi import APIRouter
 from schemas.sentimiento_schema import SentimientoInput
 from schemas.tokenizar_schema import TokenizarInput
 from services.Sentimiento_analisys import analisis_sentimiento
+from services.Tokenizador import tokenizar_texto
 
 router = APIRouter(
     prefix="/api/nlp",
@@ -24,15 +25,15 @@ async def sentimiento_analisis(payload: SentimientoInput):
     }
 
 @router.post("/tokenizar_texto")
-async def tokenizar_texto(payload: TokenizarInput):
+async def tokenizar_texto_route(payload: TokenizarInput):
     # Accedemos a los campos directamente
-    #user_id = payload.user_id
-    #texto = payload.texto_usuario
-
+    user_id = payload.user_id
+    texto = payload.texto_usuario
+    #print('texto usuario:', texto)
     # Pasamos el texto a tu función (ajusta si necesita user_id)
-    #resultado = analisis_sentimiento(texto)
+    resultado = tokenizar_texto(texto)
 
     return {
         "user_id": "wilson",
-        "resultado": 'resultado' # pendiente de desarrollar para el lunes
+        "resultado": f"{resultado}" # pendiente de desarrollar para el lunes
     }

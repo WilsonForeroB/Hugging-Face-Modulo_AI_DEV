@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import logging
 from fastapi.responses import JSONResponse
-from routes import (nlp_routes)
+from routes import (nlp_routes, imagenes_routes)
 from fastapi.exceptions import RequestValidationError
 import uvicorn
 # cron here if this one has to be inside the same app
@@ -31,6 +31,7 @@ logging.getLogger("httpcore").setLevel(logging.WARNING)
 logging.getLogger("httpx").setLevel(logging.WARNING)
 # Incluir routers
 hf.include_router(nlp_routes.router)
+hf.include_router(imagenes_routes.router)
 
 if __name__ == "__main__":
     uvicorn.run(
